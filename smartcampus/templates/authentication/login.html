@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="logo">
+          <!--<img src="{% static 'images/logo.png' %}" width="80" />-->
+
+          <h2>Smart Campus</h2>
+        </div>
+
+        <h3>Login</h3>
+
+        <form method="POST">
+          {% csrf_token %}
+
+          <div class="input-box">{{ form.username }}</div>
+
+          <div class="input-box password-box">
+            {{ form.password }}
+
+            <button type="button" onclick="togglePassword()" class="show-btn">
+              👁
+            </button>
+          </div>
+
+          <div class="remember">
+            {{ form.remember }}
+
+            <label>Remember Me</label>
+          </div>
+
+          <button class="login-btn">Login</button>
+        </form>
+
+        {% if messages %} {% for message in messages %}
+
+        <p class="message">{{message}}</p>
+
+        {% endfor %} {% endif %}
+
+        <div class="links">
+          <a href="#">Forgot Password?</a>
+
+          <br /><br />
+
+          <a href="#">Create Account</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/login.js' %}"></script>
+  </body>
+</html>
