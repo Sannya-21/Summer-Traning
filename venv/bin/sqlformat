@@ -1,4 +1,4 @@
-#!/Users/jasmeenkaur/Desktop/Project/Summer-Traning/venv/bin/python
+#!/Users/jasmeenkaur/Desktop/Project/Summer-Traning/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
